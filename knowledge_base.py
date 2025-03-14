@@ -50,8 +50,4 @@ vector_store = BigQueryVectorStore(
 
 #vector_store.add_texts(texts=texts, is_complete_overwrite=True)
 
-#vector_store.add_documents(texts)
-
-# Try running a simialarity search
-search = vector_store.similarity_search("Security")
-print(f"here are the docs searched {search}")
+vector_store.add_documents(texts)
