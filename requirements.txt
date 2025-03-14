@@ -1,3 +1,6 @@
+numpy==1.14.5
 google-cloud-aiplatform
 langchain-google-vertexai
 langchain
+langchain-google-genai 
+langchain-google-community
