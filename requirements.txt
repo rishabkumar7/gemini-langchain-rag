@@ -4,3 +4,4 @@ langchain-google-vertexai
 langchain
 langchain-google-genai 
 langchain-google-community
+streamlit
