@@ -8,6 +8,8 @@ A demo project to build a Google Cloud Certifications Chatbot using Langchain, G
 - Interface with a generative AI model for answering user queries.
 - Run a web demo with [Streamlit](https://streamlit.io).
 
+![Gemini LangChain RAG Architecture](https://storage.googleapis.com/rishabincloud/gemini-langchain-vertexai-rag.png)
+
 ## Project Structure
 
 - **[ai.py](ai.py)**: Contains the AI helper function that integrates the language model and document similarity search to answer certification questions.
