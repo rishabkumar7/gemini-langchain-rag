@@ -10,6 +10,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+#Embedding model
 embedding = VertexAIEmbeddings(model_name="text-embedding-005")
 
 """
@@ -23,6 +24,7 @@ urls = [
     'https://services.google.com/fh/files/misc/professional_cloud_security_engineer_exam_guide_english.pdf',
 ]
 
+#Load the documents and split them into chunks
 loader = UnstructuredURLLoader(urls)
 documents = loader.load()
 text_splitter = CharacterTextSplitter(chunk_size=2000, chunk_overlap=200)
@@ -33,21 +35,15 @@ for idx, split in enumerate(texts):
     split.metadata["chunk"] = idx
 
 
-
-PROJECT_ID = os.getenv("PROJECT")
-REGION = os.getenv("REGION")
-DATASET= os.getenv("DATASET")
-TABLE = os.getenv("TABLE")
-
-
+#Creating the Vector store in BigQuery
 vector_store = BigQueryVectorStore(
-    project_id=PROJECT_ID,
-    dataset_name=DATASET,
-    table_name=TABLE,
-    location=REGION,
+    project_id=os.getenv("PROJECT"),
+    dataset_name=os.getenv("DATASET"),
+    table_name=os.getenv("TABLE"),
+    location=os.getenv("REGION"),
     embedding=embedding,
 )
 
 #vector_store.add_texts(texts=texts, is_complete_overwrite=True)
-
+#Add the documents to the vector store
 vector_store.add_documents(texts)
