@@ -1,4 +1,4 @@
-numpy==1.14.5
+numpy # FOR WINDOWS USE numpy==1.14.5
 google-cloud-aiplatform
 langchain-google-vertexai
 langchain
