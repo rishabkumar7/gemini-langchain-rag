@@ -9,4 +9,4 @@ st.write("This chatbot can help you with questions about Google Cloud Certificat
 query = st.text_input("Ask a question about Google Cloud Certifications")
 if query:
     response = ai.ai_helper(query)
-    st.write(response)
+    st.write(response.content)
